@@ -8,25 +8,6 @@ packages = [{include = "house_pricing"}]
 
 [tool.poetry.dependencies]
 python = "^3.8"
-loguru
-missingno
-pandas
-scikit_learn
-numpy
-pandas
-pipreqs
-papermill
-pytest
-ruff
-jupyter
-dill
-mlflow
-optuna
-plotly
-pendulum
-seaborn
-tensorflow
-yellowbrick
 
 
 [build-system]
