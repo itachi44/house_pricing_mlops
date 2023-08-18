@@ -13,4 +13,7 @@ echo "Log directory: $LOG_DIR"
 
 # Execution
 papermill "$ROOT_DIR/notebooks/house_pricing_model_building.ipynb" \
-"$LOG_DIR/${TIMESTAMP}-house_pricing_model_training.ipynb"
+"$LOG_DIR/${TIMESTAMP}-house_pricing_model_building.ipynb"
+
+papermill "$ROOT_DIR/notebooks/house_pricing_analyse.ipynb" \
+"$LOG_DIR/${TIMESTAMP}-house_pricing_analyseipynb"
