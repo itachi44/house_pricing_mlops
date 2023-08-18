@@ -1,4 +1,4 @@
-#! bin/bash
+#!/bin/bash
 
 TIMESTAMP=$(date "+%Y-%m-%d %H:%M:%S")
 EXECUTION_DATE=$(date "+%Y-%m-%d")
