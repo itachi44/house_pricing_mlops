@@ -1,7 +1,7 @@
-loguru==0.7.0
-missingno==0.5.2
-pandas==2.0.3
-scikit_learn==1.3.0
+loguru
+missingno
+pandas
+scikit_learn
 numpy
 pandas
 pipreqs
@@ -16,3 +16,4 @@ plotly
 pendulum
 seaborn
 tensorflow
+yellowbrick
