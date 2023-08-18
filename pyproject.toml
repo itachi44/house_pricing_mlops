@@ -1,0 +1,15 @@
+[tool.poetry]
+name = "house-pricing"
+version = "0.1.0"
+description = "house price predictor project"
+authors = ["itachi44 <diopbamba86@gmail.com>"]
+readme = "README.md"
+packages = [{include = "house_pricing"}]
+
+[tool.poetry.dependencies]
+python = "^3.8"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
