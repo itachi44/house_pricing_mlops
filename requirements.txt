@@ -14,3 +14,4 @@ mlflow
 optuna
 plotly
 pendulum
+seaborn
