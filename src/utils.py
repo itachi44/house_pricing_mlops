@@ -1,5 +1,7 @@
 import pandas as pd
 import missingno as msno
+import dill
+
 
 from typing import List
 from loguru import logger
@@ -12,6 +14,7 @@ from sklearn.impute import SimpleImputer
 from sklearn.preprocessing import StandardScaler, OneHotEncoder
 from sklearn.compose import ColumnTransformer
 from sklearn.base import BaseEstimator
+from pathlib import Path
 
 
 def filter_variables_by_completion_rate(
@@ -89,3 +92,8 @@ def split_dataset(
     
     logger.info(f"\nx train: {X_train.shape}\nY train: {y_train.shape} \n" f"X test: {X_test.shape}\nY test: {y_test.shape}")
     return X_train, X_test, y_train, y_test
+
+
+def save_object_with_dill(object_to_save, object_path):
+    with open(object_path, "wb") as f:
+        dill.dump(object_to_save, f)
