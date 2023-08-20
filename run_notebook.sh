@@ -13,10 +13,10 @@ echo "Log directory: $LOG_DIR"
 
 
 # Env variables
-export AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY_ID
-export AWS_SECRET_ACCESS_KEY=$AWS_SECRET_ACCESS_KEY
-export MLFLOW_SERVER_USERNAME=$MLFLOW_SERVER_USERNAME
-export MLFLOW_SERVER_PASSWORD=$MLFLOW_SERVER_PASSWORD
+echo $AWS_ACCESS_KEY_ID
+echo $AWS_SECRET_ACCESS_KEY
+echo $MLFLOW_SERVER_USERNAME
+echo $MLFLOW_SERVER_PASSWORD
 
 # Execution
 papermill "$ROOT_DIR/notebooks/house_pricing_model_building_deployed.ipynb" \
