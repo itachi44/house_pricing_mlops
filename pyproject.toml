@@ -8,6 +8,7 @@ packages = [{include = "house_pricing"}]
 
 [tool.poetry.dependencies]
 python = "^3.8"
+boto3 = "^1.24.28"
 dill = "^0.3.7"
 jupyter = "^1.0.0"
 loguru = "^0.7.0"
