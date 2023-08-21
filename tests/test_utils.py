@@ -11,7 +11,7 @@ import os
 import pandas as pd
 
 
-data = load_data()
+data = load_data("house_prices")
 
 
 def test_filter_variables_by_completion_rate():
