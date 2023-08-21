@@ -1,10 +1,10 @@
-from ..src.utils import (filter_variables_by_completion_rate, 
+from src.utils import (filter_variables_by_completion_rate, 
                          split_dataset, 
                          remove_single_modality_categorical_variables,
                          save_object_with_dill, save_dataset, 
                          load_dataset)
 
-from ..src.make_dataset import load_data
+from src.make_dataset import load_data
 
 from pathlib import Path
 import os

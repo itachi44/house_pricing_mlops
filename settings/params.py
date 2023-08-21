@@ -2,7 +2,7 @@
 from pathlib import Path
 
 # Home directory
-HOME_DIR = Path.cwd()
+HOME_DIR = Path.cwd().parent
 
 # data
 DATA_DIR = Path(HOME_DIR, "data")
