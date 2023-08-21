@@ -1,4 +1,4 @@
-from src.utils import (filter_variables_by_completion_rate, 
+from ..src.utils import (filter_variables_by_completion_rate, 
                          split_dataset, 
                          remove_single_modality_categorical_variables,
                          save_object_with_dill, save_dataset, 
