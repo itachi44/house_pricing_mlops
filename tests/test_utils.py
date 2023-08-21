@@ -3,9 +3,15 @@ from ..src.utils import (filter_variables_by_completion_rate,
                          remove_single_modality_categorical_variables,
                          save_object_with_dill, save_dataset, 
                          load_dataset)
+
+from ..src.make_dataset import load_data
+
 from pathlib import Path
 import os
 import pandas as pd
+
+
+data = load_data()
 
 
 def test_filter_variables_by_completion_rate():
@@ -13,12 +19,6 @@ def test_filter_variables_by_completion_rate():
     Test the filter_variables_by_completion_rate function to verify if it correctly filters out
     variables with completion rates below the minimum threshold.
     """
-
-    data = pd.DataFrame({
-        "feature1": [1, 2, None, 4],
-        "feature2": [None, 2, 3, None],
-        "feature3": [None, None, None, None]
-    })
 
     filtered_data = filter_variables_by_completion_rate(data)
 
@@ -34,12 +34,6 @@ def test_remove_single_modality_categorical_variables():
     categorical variables with a single modality.
     """
 
-    data = pd.DataFrame({
-        "category1": ["A", "A", "A", "A"],
-        "category2": ["B", "C", "D", "E"],
-        "category3": ["F", "F", "F", "F"]
-    })
-
     filtered_data = remove_single_modality_categorical_variables(data)
 
     assert filtered_data.shape[1] == 1  # Expected number of columns after filtering
@@ -53,12 +47,6 @@ def test_split_dataset():
     Test the split_dataset function to verify if it correctly splits the data into training and test sets,
     while maintaining consistency in the number of rows and columns.
     """
-
-    data = pd.DataFrame({
-        "feature1": [1, 2, 3, 4],
-        "feature2": [5, 6, 7, 8],
-        "target": [10, 20, 30, 40]
-    })
 
     X_train, X_test, y_train, y_test = split_dataset(data)
 
