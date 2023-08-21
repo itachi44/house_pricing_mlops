@@ -11,16 +11,10 @@ echo "Execution date: $EXECUTION_DATE"
 echo "Root directory: $ROOT_DIR"
 echo "Log directory: $LOG_DIR"
 
-
-# Env variables
-echo $AWS_ACCESS_KEY_ID
-echo $AWS_SECRET_ACCESS_KEY
-echo $MLFLOW_SERVER_USERNAME
-echo $MLFLOW_SERVER_PASSWORD
-
 # Execution
-papermill "$ROOT_DIR/notebooks/house_pricing_model_building_deployed.ipynb" \
-"$LOG_DIR/${TIMESTAMP}-house_pricing_model_building_deployed.ipynb"
 
 papermill "$ROOT_DIR/notebooks/house_pricing_analyse.ipynb" \
 "$LOG_DIR/${TIMESTAMP}-house_pricing_analyse.ipynb"
+
+papermill "$ROOT_DIR/notebooks/house_pricing_model_building_deployed.ipynb" \
+"$LOG_DIR/${TIMESTAMP}-house_pricing_model_building_deployed.ipynb"

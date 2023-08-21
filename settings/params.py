@@ -2,7 +2,7 @@
 from pathlib import Path
 
 # Home directory
-HOME_DIR = Path.cwd().parent
+HOME_DIR = Path.cwd()
 
 # data
 DATA_DIR = Path(HOME_DIR, "data")
@@ -11,7 +11,7 @@ DATA_DIR_OUTPUT = Path(DATA_DIR, "output")
 
 # models
 MODEL_DIR = Path(HOME_DIR, "models")
-MODEL_NAME = "model_house_price.dill"  # add on prefix the execution date (YYYYMMDD_{MODEL_NAME})
+MODEL_NAME = "model_house_pricing.dill"  # add on prefix the execution date (YYYYMMDD_{MODEL_NAME})
 
 # reports: graphs, html, ...
 REPORT_DIR = Path(HOME_DIR, "reports")

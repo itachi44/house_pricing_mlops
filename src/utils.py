@@ -1,6 +1,8 @@
 import pandas as pd
 import missingno as msno
 import dill
+import pickle
+
 
 
 from typing import List
@@ -15,6 +17,7 @@ from sklearn.preprocessing import StandardScaler, OneHotEncoder
 from sklearn.compose import ColumnTransformer
 from sklearn.base import BaseEstimator
 from pathlib import Path
+from settings.params import DATA_DIR, DATA_DIR_INPUT, MODEL_DIR
 
 
 def filter_variables_by_completion_rate(
@@ -95,5 +98,57 @@ def split_dataset(
 
 
 def save_object_with_dill(object_to_save, object_path):
+    """
+    Sauvegarde un objet en utilisant le module dill.
+    
+    Args:
+        object_to_save: L'objet que vous souhaitez sauvegarder.
+        object_path (Path): Le chemin complet vers l'emplacement où l'objet sera sauvegardé.
+    """
+
+    if not MODEL_DIR.exists():
+        MODEL_DIR.mkdir(parents=True, exist_ok=True)
+    
     with open(object_path, "wb") as f:
         dill.dump(object_to_save, f)
+
+
+def save_dataset(dataset, filename):
+    """
+    Sauvegarde le dataset prétraité dans l'emplacement DATA_DIR_INPUT.
+    
+    Args:
+        dataset (object): Le dataset prétraité que vous souhaitez sauvegarder.
+        filename (str): Le nom du fichier de sauvegarde (sans extension).
+    """
+
+    if not DATA_DIR.exists():
+        DATA_DIR.mkdir(parents=True, exist_ok=True)
+    if not DATA_DIR_INPUT.exists():
+        DATA_DIR_INPUT.mkdir(parents=True, exist_ok=True)
+
+    save_path = DATA_DIR_INPUT / (filename + ".pkl")
+    
+    with open(save_path, 'wb') as f:
+        pickle.dump(dataset, f)
+        
+    print(f"Dataset sauvegardé avec succès sous {save_path}")
+
+
+def load_dataset(filename):
+    """
+    Charge le dataset prétraité depuis l'emplacement DATA_DIR_INPUT.
+    
+    Args:
+        filename (str): Le nom du fichier de sauvegarde (sans extension).
+        
+    Returns:
+        dataset (object): Le dataset prétraité chargé depuis le fichier.
+    """
+
+    load_path = DATA_DIR_INPUT / (filename + ".pkl")
+    
+    with open(load_path, 'rb') as f:
+        dataset = pickle.load(f)
+    
+    return dataset
