@@ -26,7 +26,7 @@ def test_load_data_with_column_to_lower_false():
     Validates if the load_data function correctly loads data and keeps column names in lowercase.
     """
     dataset_name = "house_prices"
-    data = load_data(dataset_name, column_to_lower=False)
+    data = load_data(dataset_name, column_to_lower=True)
     assert isinstance(data, pd.DataFrame)
     assert data.shape[0] > 0
     assert data.shape[1] > 0

@@ -23,11 +23,16 @@ def load_data(dataset_name: str,
     logger.info(f"\n======================================================================="
                 f"\nArgs: dataset name: {dataset_name} \ncolumn to lower: {column_to_lower}"
                 f"\n=======================================================================")
+    
     if dataset_name == "house_prices":
         dframe = fetch_openml(name=dataset_name, as_frame=True, version="active", target_column=None)
-    data = dframe.data
+        data = dframe.data
+    else:
+        raise ValueError(f"Unrecognized dataset name: {dataset_name}")
+
     logger.info(f"Shape of raw input features: {data.shape}")
     logger.info(f"Full description of the dataset\n{dframe.DESCR}")
+
     if column_to_lower:
         data.columns = data.columns.str.lower()
     return data
