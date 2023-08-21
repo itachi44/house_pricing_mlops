@@ -1,5 +1,8 @@
 """Settings"""
 from pathlib import Path
+import sys
+sys.path.append(str(Path.cwd().parent))
+
 
 # Home directory
 HOME_DIR = Path.cwd().parent
