@@ -3,8 +3,6 @@ import missingno as msno
 import dill
 import pickle
 
-
-
 from typing import List
 from loguru import logger
 from sklearn.preprocessing import StandardScaler, MinMaxScaler
