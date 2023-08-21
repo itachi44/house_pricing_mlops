@@ -2,8 +2,7 @@
 
 import pandas as pd
 import pytest
-from src import make_dataset
-
+from src.make_dataset import load_data
 
 # Test the load_data function
 def test_load_data():
@@ -13,7 +12,7 @@ def test_load_data():
     Validates if the load_data function correctly loads data from the specified dataset.
     """
     dataset_name = "house_prices"
-    data = make_dataset.load_data(dataset_name)
+    data = load_data(dataset_name)
     assert isinstance(data, pd.DataFrame)
     assert data.shape[0] > 0
     assert data.shape[1] > 0
@@ -27,7 +26,7 @@ def test_load_data_with_column_to_lower_false():
     Validates if the load_data function correctly loads data and keeps column names in lowercase.
     """
     dataset_name = "house_prices"
-    data = make_dataset.load_data(dataset_name, column_to_lower=False)
+    data = load_data(dataset_name, column_to_lower=False)
     assert isinstance(data, pd.DataFrame)
     assert data.shape[0] > 0
     assert data.shape[1] > 0
@@ -43,7 +42,7 @@ def test_load_data_with_invalid_dataset():
     """
     dataset_name = "invalid_dataset"
     with pytest.raises(ValueError):
-        data = make_dataset.load_data(dataset_name)
+        data = load_data(dataset_name)
 
 # Add more tests as needed
 
