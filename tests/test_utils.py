@@ -23,9 +23,9 @@ def test_filter_variables_by_completion_rate():
     filtered_data = filter_variables_by_completion_rate(data)
 
     assert filtered_data.shape[1] >= 50  # Expected number of columns after filtering
-    assert "remodel_age" in filtered_data.columns  # Expected column to be present
-    assert "building_age" not in filtered_data.columns  # Expected column to be removed
-    assert "saleprice" not in filtered_data.columns  # Expected column to be removed
+    assert "salecondition" in filtered_data.columns  # Expected column to be present
+    assert "miscfeature" not in filtered_data.columns  # Expected column to be removed
+    assert "poolqc" not in filtered_data.columns  # Expected column to be removed
 
 
 def test_remove_single_modality_categorical_variables():
