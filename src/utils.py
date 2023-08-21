@@ -14,7 +14,7 @@ from sklearn.preprocessing import StandardScaler, OneHotEncoder
 from sklearn.compose import ColumnTransformer
 from sklearn.base import BaseEstimator
 from pathlib import Path
-from settings.params import DATA_DIR, DATA_DIR_INPUT, MODEL_DIR, MODEL_PARAMS
+from ..settings.params import DATA_DIR, DATA_DIR_INPUT, MODEL_DIR, MODEL_PARAMS
 
 
 def filter_variables_by_completion_rate(

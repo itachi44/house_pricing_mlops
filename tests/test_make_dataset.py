@@ -2,7 +2,7 @@
 
 import pandas as pd
 import pytest
-from src.make_dataset import load_data
+from ..src.make_dataset import load_data
 
 # Test the load_data function
 def test_load_data():
