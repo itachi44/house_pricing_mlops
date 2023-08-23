@@ -58,6 +58,6 @@ Dans github le workflow est éxécuté à chaque mis à jour sur la branche main
 ![MlFlow Image](assets/mlflow_ui.jpg)
 
 ### Business performances : 
-#### L'API pour utiliser le modèle se trouve à l'adresse ```http://ec2-3-253-117-137.eu-west-1.compute.amazonaws.com:8000```, voici un example de requête CURL : 
+#### L'endpoint de API pour utiliser le modèle se trouve à l'adresse ```http://ec2-34-241-176-160.eu-west-1.compute.amazonaws.com:5000/predict_house_price```, voici un example de requête CURL : 
 
 (((![ApiRequest Image](assets/api_request.jpg))))
