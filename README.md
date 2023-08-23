@@ -60,4 +60,16 @@ Dans github le workflow est éxécuté à chaque mis à jour sur la branche main
 ### Business performances : 
 #### L'endpoint de API pour utiliser le modèle se trouve à l'adresse ```http://ec2-34-241-176-160.eu-west-1.compute.amazonaws.com:5000/predict_house_price```, voici un example de requête CURL : 
 
+```
+curl -X POST \
+  http://your-ec2-instance-ip/predict_house_price \
+  -H 'Content-Type: application/json' \
+  -d '{
+    "feature1": value1,
+    "feature2": value2,
+    "feature3": value3,
+    ...
+}'
+```
+
 (((![ApiRequest Image](assets/api_request.jpg))))
