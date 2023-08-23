@@ -61,7 +61,7 @@ def define_pipeline(numerical_transformer: list,
                     categorical_transformer: list,
                     target_transformer,
                     estimator: Pipeline,
-                    **kwargs: dict) -> Pipeline:
+                    **kwargs: dict) -> tuple[Pipeline, ColumnTransformer]:
     """ Define pipeline for modeling
 
     Args:
@@ -95,10 +95,10 @@ def define_pipeline(numerical_transformer: list,
         model_pipeline = Pipeline(steps=[("preprocessor", preprocessor), ("estimator", estimator)])
         
     logger.info(f"{model_pipeline}")
-    return model_pipeline
+
+    return model_pipeline, preprocessor
 
 
-# TODO : écrire le docstring
 
 def train_models(
         data, 
@@ -131,7 +131,7 @@ def train_models(
             description="house price modeling",) as mlf_run:
 
             # Model definition
-            reg = define_pipeline(numerical_transformer=[SimpleImputer(strategy="median"),
+            reg, column_transformer  = define_pipeline(numerical_transformer=[SimpleImputer(strategy="median"),
                                                         RobustScaler()],
                                 categorical_transformer=[SimpleImputer(strategy="constant", fill_value="undefined"),
                                                         OneHotEncoder(drop="if_binary", handle_unknown="ignore")],
@@ -181,7 +181,8 @@ def train_models(
             model_results[model_name] = {
                 "train_metrics": train_metrics,
                 "test_metrics": test_metrics,
-                "run_id": mlf_run.info.run_id
+                "run_id": mlf_run.info.run_id,
+                "column_transformer": column_transformer
             }
 
 
