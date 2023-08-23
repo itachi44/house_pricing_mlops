@@ -1,5 +1,6 @@
 """Settings"""
 from pathlib import Path
+import pendulum
 
 # Home directory
 HOME_DIR = Path.cwd()
@@ -58,3 +59,7 @@ MODEL_PARAMS = {
 
 #random state
 SEED=43
+
+ESTIMATORS=10
+
+EXECUTION_DATE = pendulum.now(tz=TIMEZONE)
