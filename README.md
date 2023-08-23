@@ -36,10 +36,10 @@ L'éxécution du projet consistera à réaliser successivement et de manière au
 
 #### step 2 : exporter les variables d'environnement suivants :
 
-export MLFLOW_SERVER_USERNAME=<your_mlflow_server_username>
-export MLFLOW_SERVER_PASSWORD=<your_mlflow_server_pwd>
-export AWS_ACCESS_KEY_ID=<your_bucket_access_key_id>
-export AWS_SECRET_ACCESS_KEY=<your_bucket_secret_access_key>
+- export MLFLOW_SERVER_USERNAME=<your_mlflow_server_username>
+- export MLFLOW_SERVER_PASSWORD=<your_mlflow_server_pwd>
+- export AWS_ACCESS_KEY_ID=<your_bucket_access_key_id>
+- export AWS_SECRET_ACCESS_KEY=<your_bucket_secret_access_key>
 
 #### step 3 : exécuter le fichier ```run_notebook.sh``` avec la commande ```./run_notebook.sh```
 
