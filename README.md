@@ -89,3 +89,8 @@ curl -X POST \
 ```
 
 ![ApiRequest Image](assets/api_request.jpg)
+
+
+### Configuration de l'API :
+
+![ApiConfig Image](assets/api_config.jpg)
