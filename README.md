@@ -65,10 +65,26 @@ curl -X POST \
   http://ec2-34-241-176-160.eu-west-1.compute.amazonaws.com:5000/predict_house_price/predict_house_price \
   -H 'Content-Type: application/json' \
   -d '{
-    "feature1": value1,
-    "feature2": value2,
-    "feature3": value3,
-    ...
+    'bsmtunfsf': 291.0, 
+'mssubclass': 60.0, 
+'foundation': 'PConc', 
+'saletype': 'WD', 
+'masvnrtype': 'None', 
+'garagecars': 2.0, 
+'heating': 'GasA', 
+'heatingqc': 'Ex', 
+'remodel_age': 4.0, 
+'building_age': 5.0, 
+'totalbsmtsf': 716.0, 
+'overallqual': 7.0, 
+'housestyle': '2Story', 
+'masvnrarea': 0.0, 
+'lotarea': 7795.0, 
+'street': 'Pave', 
+'condition2': 'Norm', 
+'garagetype': 'Attchd', 
+'bsmtfinsf1': 425.0, 
+'exterqual': 'Gd'
 }'
 ```
 
