@@ -88,4 +88,4 @@ curl -X POST \
 }'
 ```
 
-(((![ApiRequest Image](assets/api_request.jpg))))
+![ApiRequest Image](assets/api_request.jpg)
