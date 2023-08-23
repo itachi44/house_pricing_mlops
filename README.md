@@ -52,10 +52,12 @@ Dans github le workflow est éxécuté à chaque mis à jour sur la branche main
 
 ![Workflow Image](assets/workflow_run.jpg)
 
-#### le UI de mlflow se trouve à l'adresse ```http://ec2-3-253-117-137.eu-west-1.compute.amazonaws.com:5000/``
+### MLFLOW Tracking :
+#### Le UI de mlflow se trouve à l'adresse ```http://ec2-3-253-117-137.eu-west-1.compute.amazonaws.com:5000/``
 
 ![MlFlow Image](assets/mlflow_ui.jpg)
 
-#### l'API pour la prédiction se trouve à l'adresse ```http://ec2-3-253-117-137.eu-west-1.compute.amazonaws.com:8000```, voici un example de requête CURL : 
+### Business performances : 
+#### L'API pour utiliser le modèle se trouve à l'adresse ```http://ec2-3-253-117-137.eu-west-1.compute.amazonaws.com:8000```, voici un example de requête CURL : 
 
 (((![ApiRequest Image](assets/api_request.jpg))))
